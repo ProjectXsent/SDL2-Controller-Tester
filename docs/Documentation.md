@@ -64,8 +64,19 @@ The project allows to test the input of a controller, printing on the standard o
 Simply open a terminal in the root directory of the project and run `make`.
 
 ### Windows
+- [MSYS2](https://www.msys2.org)
+- [SDL2 for MinGW](https://libsdl.org/release/) (SDL2-devel-2.x.x-mingw.tar.gz)
 
-If MinGW and SDL2 are correctly installed, open a cmd window in the root directory of the project and run `gcc -o controllerTester src\main.c src\init.c src\input.c -lmingw32 -lSDL2main -lSDL2`.
+Building instructions
+1. Launch MSYS2 MSYS/msys2.exe and enter the following:
+```
+pacman -Syu
+pacman -S mingw-w64-i686-toolchain
+```
+2. Press Enter to install all packages.
+3. Open `SDL2-devel-2.x.x-mingw.tar.gz` and extract the contents of `i686-w64-mingw32` folder to the MingW32 folder (C:\msys64\mingw32).
+4. If MinGW and SDL2 are now correctly installed, open a `cmd` window in the root directory of the repository folder and run `gcc -o controllerTester src\main.c src\init.c src\input.c -lmingw32 -lSDL2main -lSDL2`.
+5. `controllerTester.exe` will appear in the folder.
 
 
 ## Execution Flow

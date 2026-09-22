@@ -47,7 +47,7 @@
   <p align="center">
 This little application has been made while I was attending a tutorial to make games in C using SDL2. Since my purpose will be to implement a game with both keyboard or controller input, I wanted to test which of my PS3 controller feature I could use (spoiler: each one).</i>
 <br />
-	<a href="https://github.com/mikyll/SDL2-Controller-Tester/blob/main/docs/Documentation.md"><strong>Explore the docs »</strong></a>
+	<a href="https://github.com/ProjectXsent/SDL2-Controller-Tester/blob/main/docs/Documentation.md"><strong>Explore the docs »</strong></a>
 	<br />
 	<br />
 	<a href="#demo">View Demo</a>
@@ -127,11 +127,11 @@ The easiest way is to open a terminal and install the packages required. In Debi
 Otherwise download the source code from [there](https://www.libsdl.org/release/SDL2-2.0.14.tar.gz), extract the content and cd to the main directory. Then run  `./configure` to configure the installation, `make all` to compile the source, and finally `make install` to install the package.
 
 #### Windows (MinGW)
-1. Download SDL2 source code .zip from [there](https://www.libsdl.org/release/SDL2-2.0.14.zip) and extract the content.
-2. Inside SDL2-2.0.14, depending on your OS, open the 32bit or 64bit directory, respectively **i686-w64-mingw32** or **x86_64-w64-mingw32**.
-3. Then copy the content of the lib subdirectory to the MinGW lib directory (which should be at C:\MinGW\lib).
-4. Then, going back to our SDL2 directory, open the include subdirectory and copy the folder **SDL2** to the MinGW include subdirectory.
-**NB**: to compile a project which uses SLD2 libraries, you also need SDL2.dll, which can be found inside the bin subdirectory of the 32 or 64 bit version of the SDL2 root directory (SDL2-2.0.14, the one extracted from the archive). This one has to be put in the directory from which you compile the application.
+1. Download SDL2 source code .zip from [there](https://libsdl.org/release/) (SDL2-devel-2.x.x-mingw.zip) and extract the content.
+2. Inside SDL2-2.x.x, depending on your OS, open the 32bit or 64bit directory, respectively **i686-w64-mingw32** or **x86_64-w64-mingw32**.
+3. Then copy the content of either **i686-w64-mingw32** or **x86_64-w64-mingw32** folder to MSYS2's mingw32 or mingw64 directory. (which should be either at `C:\msys64\mingw32` or `C:\msys64\mingw64`).
+4. Back to the repository folder, open a CMD window and run `gcc -o controllerTester src\main.c src\init.c src\input.c -lmingw32 -lSDL2main -lSDL2`.
+5. A `controllerTester.exe` will be appear in the folder.
 
 
 ### Project Build (Linux)
